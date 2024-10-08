@@ -1,0 +1,20 @@
+.itemlist {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    background: rgba(22, 22, 22, .5);
+    height: 400px;
+}
+.itemlist h2 {
+    font-family: Noto Sans Mono;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 50px;
+}
+.itemlist img {
+    width: 300px;
+}

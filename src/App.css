@@ -1,0 +1,10 @@
+wrap {
+    padding-top: 80px;
+    display: block;
+}
+listado {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}

@@ -18,8 +18,8 @@ const NavBar = () => {
                 <li><Link to="/category/maki">Maki</Link></li>
                 <li><Link to="/category/sashimi">Sashimi</Link></li>
                 <li><Link to="/category/temaki">Temaki</Link></li>
-                <li><Link to="/category/uramaki">Uramaki</Link></li>
-                <li><Link to="/category/gunkan">Gunkan</Link></li>
+                <li><Link to="/category/roll">Rolls</Link></li>
+                <li><Link to="/category/postre">Postres</Link></li>
             </ul>
             <CartWidget />
         </nav>

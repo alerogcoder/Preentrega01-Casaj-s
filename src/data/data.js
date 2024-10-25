@@ -2,118 +2,131 @@ const products = [
     {
         id: "ng1111",
         name: "Nigiri de salmón",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper bibendum. Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi.",
+        description: "Un clásico sushi con una loncha de salmón fresco sobre arroz sazonado.",
         stock: 10,
+        quantity: 2,
         price: 2000,
-        image: "/img/tiposushi1.png",
+        image: "/img/salmonnigiri.webp",
         category: "nigiri"
     },
     {
         id: "ng1212",
         name: "Nigiri de atún",
-        description: "",
+        description: "Pieza de arroz cubierta con atún fresco, ideal para los amantes del mar.",
         stock: 2,
+        quantity: 2,
         price: 1000,
-        image: "/img/tiposushi2.png",
+        image: "/img/tunanigiri.webp",
         category: "nigiri"
     },
     {
         id: "mk1313",
         name: "Maki de pepino",
-        description: "",
+        description: "Rollo de alga y arroz relleno de crujiente pepino, ligero y refrescante.",
         stock: 15,
+        quantity: 8,
         price: 800,
-        image: "/img/tiposushi3.png",
+        image: "/img/pepinomaki.webp",
         category: "maki"
     },
     {
         id: "mk1414",
         name: "Maki de aguacate",
-        description: "",
+        description: "Delicioso maki con aguacate fresco, envuelto en alga nori y arroz.",
         stock: 8,
+        quantity: 8,
         price: 850,
-        image: "/img/tiposushi4.png",
+        image: "/img/paltamaki.webp",
         category: "maki"
     },
     {
         id: "sh1515",
         name: "Sashimi de salmón",
-        description: "",
+        description: "Salmón crudo de primera calidad, cortado en finas láminas.",
         stock: 12,
+        quantity: 5,
         price: 2200,
-        image: "/img/tiposushi5.png",
+        image: "/img/sashimisalmon.webp",
         category: "sashimi"
     },
     {
         id: "sh1616",
         name: "Sashimi de atún",
-        description: "",
+        description: "Láminas de atún fresco, perfectas para disfrutar del sabor puro del mar.",
         stock: 5,
+        quantity: 5,
         price: 2300,
-        image: "/img/tiposushi6.png",
+        image: "/img/sashimiatun.webp",
         category: "sashimi"
     },
     {
         id: "tm1717",
         name: "Temaki de cangrejo",
-        description: "",
+        description: "Cono de alga nori relleno de arroz y suculento cangrejo.",
         stock: 7,
+        quantity: 1,
         price: 1500,
-        image: "/img/tiposushi7.png",
+        image: "/img/temakicangrejo.webp",
         category: "temaki"
     },
     {
         id: "tm1818",
-        name: "Temaki de anguila",
-        description: "",
+        name: "Temaki de bacalao",
+        description: "Sabroso temaki relleno de bacalao a la parrilla con salsa dulce.",
         stock: 6,
+        quantity: 1,
         price: 1700,
-        image: "/img/tiposushi8.png",
+        image: "/img/temakibacalao.webp",
         category: "temaki"
     },
     {
-        id: "ur1919",
-        name: "Uramaki California",
-        description: "",
+        id: "pk1919",
+        name: "Pollo katsu",
+        description: "Rollo relleno de crujiente pollo empanado estilo katsu, combinado con una suave capa de arroz y alga nori.",
         stock: 9,
+        quantity: 4,
         price: 1800,
-        image: "/img/tiposushi9.png",
-        category: "uramaki"
+        image: "/img/katsupollo.webp",
+        category: "roll"
     },
     {
-        id: "ur2020",
-        name: "Uramaki de salmón",
-        description: "",
+        id: "cc2020",
+        name: "Crunchy california",
+        description: "Delicioso rollo de arroz relleno de aguacate, surimi y pepino, cubierto con tempura crujiente para darle un toque extra de textura.",
         stock: 4,
+        quantity: 4,
         price: 1900,
-        image: "/img/tiposushi10.png",
-        category: "uramaki"
+        image: "/img/crunchycalifornia.webp",
+        category: "roll"
     },
     {
-        id: "gk2121",
-        name: "Gunkan de salmón",
-        description: "",
+        id: "ps2121",
+        name: "Mochis de chocolate",
+        description: "Dulce y suave mochi relleno de cremoso chocolate, ideal para los amantes de lo dulce.",
         stock: 3,
+        quantity: 2,
         price: 1200,
-        image: "/img/tiposushi11.png",
-        category: "gunkan"
+        image: "/img/mochichoco.webp",
+        category: "postre"
     },
     {
-        id: "gk2222",
-        name: "Gunkan de huevas",
-        description: "",
+        id: "ps2222",
+        name: "Mochis de fresa y cheesecake",
+        description: "Delicado mochi con un suave relleno de fresa, una combinación perfecta de textura y frescura.",
         stock: 2,
+        quantity: 2,
         price: 1300,
-        image: "/img/tiposushi12.png",
-        category: "gunkan"
+        image: "/img/mochifresa.webp",
+        category: "postre"
     }
 ]
+
 
 const getProducts = () => {
     return new Promise((resolve, reject)=> {
         setTimeout( ()=> {
             resolve(products)
-        }, 2000)
+        }, 1000)
     })
 }
 

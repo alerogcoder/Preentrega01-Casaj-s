@@ -1,22 +1,30 @@
-// import NavBar from "./components/NavBar"
+import Contador from "./components/Ejemplos/Contador"
+
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import './App.css'
-import sushi1 from './assets/tiposushi1.png'
-import sushi2 from './assets/tiposushi2.png'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Footer from "./components/Footer/Footer"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 
 function App() {
 
   return (
-    <div>
+    <>
+    <BrowserRouter>
       <NavBar />
-      <wrap>
-      <listado>
-      <ItemListContainer inventario={"Tabla de 15"} imagen={sushi2}/>
-      <ItemListContainer inventario={"Tabla de 10"} imagen={sushi1}/>
-      </listado>
-      </wrap>
-    </div>
+
+      <div className="wrap">
+      <Routes>
+        <Route path="/" element={ <ItemListContainer/> } />
+        <Route path="/category/:idCategory" element={<ItemListContainer/>}/>
+        <Route path="/detail/:idProduct" element={<ItemDetailContainer/>}></Route>
+      </Routes>
+      </div>
+
+      <Footer />
+    </BrowserRouter>
+    </>
   )
 }
 

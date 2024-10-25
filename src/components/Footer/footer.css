@@ -1,0 +1,12 @@
+.footer {
+    height: 50px;
+    background-color: rgba(11,11,11,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    bottom: 0;
+}

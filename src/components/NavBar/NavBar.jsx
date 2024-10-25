@@ -1,6 +1,7 @@
 import "./navbar.css"
 import logo from "../../assets/ikigailogo.png"
 import CartWidget from "./CartWidget"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
@@ -8,17 +9,17 @@ const NavBar = () => {
 
     return (
         <nav className="navbar">
-            <div className="brand">
+            <Link to="/" className="brand">
                 <img src={logo} />
                 <h2>Ikigai Sushi</h2>
-            </div>
+            </Link>
             <ul>
-                <li>Nigiri</li>
-                <li>Maki</li>
-                <li>Sashimi</li>
-                <li>Temaki</li>
-                <li>Uramaki</li>
-                <li>Gunkan</li>
+                <li><Link to="/category/nigiri">Nigiri</Link></li>
+                <li><Link to="/category/maki">Maki</Link></li>
+                <li><Link to="/category/sashimi">Sashimi</Link></li>
+                <li><Link to="/category/temaki">Temaki</Link></li>
+                <li><Link to="/category/uramaki">Uramaki</Link></li>
+                <li><Link to="/category/gunkan">Gunkan</Link></li>
             </ul>
             <CartWidget />
         </nav>

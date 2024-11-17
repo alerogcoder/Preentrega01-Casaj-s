@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
-import ContadorView from "./ContadorView"
-import Titulo from "./Titulo"
+import ContadorView from "../Contadores/ContadorView"
 
 const Contador = () => {
     const [ contador, setContador ] = useState(0)
@@ -40,16 +39,7 @@ useEffect ( ()=> {
 
 
     return (
-        <>
-        <div>
-            <p>Valor toggle: { toggle.toString() }</p>
-            <button onClick={ alternarToggle }>Alternar valor del toggle</button>
-        {
-            toggle === true && <Titulo />
-        }
-        </div>
         <ContadorView contador={contador} aumentarContador={aumentarContador} restarContador={restarContador} />
-        </>
     )
 }
 export default Contador

@@ -5,16 +5,24 @@ import { useParams } from "react-router-dom"
 import "./itemdetail.css"
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const { idProduct } = useParams()
+    const [product, setProduct] = useState(null)
+    const { idProduct } = useParams();
 
     useEffect ( ()=> {
         getProducts()
         .then( (data)=> {
-            const findProduct = data.find( (product)=> product.id === idProduct)
+            const findProduct = data.find( 
+              (product)=> product.id === idProduct);
             setProduct(findProduct)
         })
-    }, [idProduct])
+        .catch((error) => {
+          console.error("Error fetching product:", error);
+          setProduct(null); 
+      });
+    }, [idProduct]);
+    if (!product) {
+      return <p id="loadingproduct">Cargando producto...</p>; // Puedes mostrar un mensaje mientras se carga el producto
+  }
 
   return (
     <ItemDetail product={product} />

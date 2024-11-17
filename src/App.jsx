@@ -1,12 +1,9 @@
-import Contador from "./components/Ejemplos/Contador"
-
 import NavBar from "./components/NavBar/NavBar"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Footer from "./components/Footer/Footer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
-
 function App() {
 
   return (

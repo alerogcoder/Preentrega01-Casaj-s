@@ -6,7 +6,7 @@ const products = [
         stock: 10,
         quantity: 2,
         price: 2000,
-        image: "/img/salmonnigiri.webp",
+        image: ["/img/salmonnigiri.webp", "/img/salmonnigiri2.webp"],
         category: "nigiri"
     },
     {
@@ -16,7 +16,7 @@ const products = [
         stock: 2,
         quantity: 2,
         price: 1000,
-        image: "/img/tunanigiri.webp",
+        image: ["/img/tunanigiri.webp", "/img/tunanigiri2.webp"],
         category: "nigiri"
     },
     {
@@ -26,7 +26,7 @@ const products = [
         stock: 15,
         quantity: 8,
         price: 800,
-        image: "/img/pepinomaki.webp",
+        image: ["/img/pepinomaki.webp", "/img/pepinomaki2.webp"],
         category: "maki"
     },
     {
@@ -36,7 +36,7 @@ const products = [
         stock: 8,
         quantity: 8,
         price: 850,
-        image: "/img/paltamaki.webp",
+        image: ["/img/paltamaki.webp", "/img/paltamaki2.webp"],
         category: "maki"
     },
     {
@@ -46,7 +46,7 @@ const products = [
         stock: 12,
         quantity: 5,
         price: 2200,
-        image: "/img/sashimisalmon.webp",
+        image: ["/img/sashimisalmon.webp", "/img/sashimisalmon2.webp"],
         category: "sashimi"
     },
     {
@@ -56,7 +56,7 @@ const products = [
         stock: 5,
         quantity: 5,
         price: 2300,
-        image: "/img/sashimiatun.webp",
+        image: ["/img/sashimiatun.webp", "/img/sashimiatun2.webp"],
         category: "sashimi"
     },
     {
@@ -66,7 +66,7 @@ const products = [
         stock: 7,
         quantity: 1,
         price: 1500,
-        image: "/img/temakicangrejo.webp",
+        image: ["/img/temakicangrejo.webp", "/img/temakicangrejo2.webp"],
         category: "temaki"
     },
     {
@@ -76,7 +76,7 @@ const products = [
         stock: 6,
         quantity: 1,
         price: 1700,
-        image: "/img/temakibacalao.webp",
+        image: ["/img/temakibacalao.webp", "/img/temakibacalao2.png"],
         category: "temaki"
     },
     {
@@ -86,7 +86,7 @@ const products = [
         stock: 9,
         quantity: 4,
         price: 1800,
-        image: "/img/katsupollo.webp",
+        image: ["/img/katsupollo.webp", "/img/katsupollo2.webp"],
         category: "roll"
     },
     {
@@ -96,7 +96,7 @@ const products = [
         stock: 4,
         quantity: 4,
         price: 1900,
-        image: "/img/crunchycalifornia.webp",
+        image: ["/img/crunchycalifornia.webp", "/img/crunchycalifornia2.webp"],
         category: "roll"
     },
     {
@@ -106,7 +106,7 @@ const products = [
         stock: 3,
         quantity: 2,
         price: 1200,
-        image: "/img/mochichoco.webp",
+        image: ["/img/mochichoco.webp", "/img/mochichoco2.webp"],
         category: "postre"
     },
     {
@@ -116,7 +116,7 @@ const products = [
         stock: 2,
         quantity: 2,
         price: 1300,
-        image: "/img/mochifresa.webp",
+        image: ["/img/mochifresa.webp", "/img/mochifresa2.webp"],
         category: "postre"
     }
 ]

@@ -38,7 +38,7 @@ const ItemDetail = ({ product }) => {
           <strong>Precio:</strong> ${product.price}
         </p>
         <p className="itemCant">
-          <strong>Cantidad en el pack:</strong> {product.quantity}
+          <strong>Piezas:</strong> {product.cantidad}
         </p>
         {
           showItemCount ? (

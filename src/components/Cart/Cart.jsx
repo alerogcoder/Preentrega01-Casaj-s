@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import CartEmpty from "./CartEmpty"
 import "./cart.css"
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
@@ -38,7 +39,8 @@ const Cart = () => {
         ))
         }
         <p className="preciocarrito">Precio total: {totalPrice()}</p>
-        <button onClick={deleteCart}>Borrar carrito</button>
+        <button onClick={deleteCart}>Vaciar carrito</button>
+        <Link to="/checkout">Continuar al pago</Link>
     </div>
     )
 }

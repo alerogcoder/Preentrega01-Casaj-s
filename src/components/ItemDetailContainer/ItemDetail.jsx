@@ -1,22 +1,28 @@
-import { useState, useContext } from "react";
-import ItemCount from "../Contadores/ItemCount";
-import { CartContext } from "../../context/CartContext" 
-import { Link } from "react-router-dom";
+import { useState, useContext } from "react"
+import ItemCount from "../Contadores/ItemCount"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
+import ItemDetailLoading from "./ItemDetailLoading"
 
 const ItemDetail = ({ product }) => {
+  if (!product) {
+    return <ItemDetailLoading />
+  }
+
   const [showItemCount, setShowItemCount] = useState(true)
 
   const { addProductInCart } = useContext(CartContext)
 
   const addProduct = (count) => {
     const productCart = { ...product, quantity: count }
-    
+
     addProductInCart(productCart)
     setShowItemCount(false)
-  }
+  };
 
-  const [currentImage, setCurrentImage] = useState(product.image[0]);
-  const images = product.image.filter((image) => image !== currentImage);
+  const [currentImage, setCurrentImage] = useState(product.image[0])
+  const images = product.image.filter((image) => image !== currentImage)
+
   return (
     <div className="itemCard">
       <div className="secondary-image">
@@ -35,12 +41,12 @@ const ItemDetail = ({ product }) => {
           <strong>Cantidad en el pack:</strong> {product.quantity}
         </p>
         {
-          showItemCount === true ? (
-            <ItemCount stock={product.stock} addProduct={addProduct}/>
+          showItemCount ? (
+            <ItemCount stock={product.stock} addProduct={addProduct} />
           ) : (
             <>
-            <ItemCount stock={product.stock} addProduct={addProduct}/>
-            <Link className="botonagregar" to="/cart">Terminar mi compra</Link>
+              <ItemCount stock={product.stock} addProduct={addProduct} />
+              <Link className="botonagregar" to="/cart">Terminar mi compra</Link>
             </>
           )
         }

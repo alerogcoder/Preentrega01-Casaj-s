@@ -7,27 +7,30 @@ import { getDoc, doc } from "firebase/firestore"
 import db from "../../db/db.js"
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState(null)
-    const { idProduct } = useParams();
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const { idProduct } = useParams()
 
-    const getProductById = () => {
-      const docRef = doc( db, "products", idProduct )
-      getDoc(docRef)
-      .then((dataDb)=> {
+  const getProductById = () => {
+    const docRef = doc(db, "products", idProduct)
+    getDoc(docRef)
+      .then((dataDb) => {
         const productDb = { id: dataDb.id, ...dataDb.data() }
-
-        setProduct(productDb)
+        setProduct(productDb);
       })
-    }
+      .finally(() => setLoading(false))
+  };
 
-    useEffect ( ()=> {
-      getProductById()
-    }, [idProduct]);
+  useEffect(() => {
+    getProductById()
+  }, [idProduct])
 
+  if (loading) {
+    return <ItemDetailLoading />
+  }
 
-  return (
-    <ItemDetail product={product} />
-  )
-}
+  return <ItemDetail product={product} />
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
+

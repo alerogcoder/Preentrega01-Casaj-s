@@ -1,28 +1,29 @@
-import { getProducts } from "../../data/data.js"
 import { useState, useEffect } from "react"
 import ItemDetail from "./ItemDetail.jsx"
 import { useParams } from "react-router-dom"
 import "./itemdetail.css"
+import ItemDetailLoading from "./ItemDetailLoading.jsx"
+import { getDoc, doc } from "firebase/firestore"
+import db from "../../db/db.js"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null)
     const { idProduct } = useParams();
 
+    const getProductById = () => {
+      const docRef = doc( db, "products", idProduct )
+      getDoc(docRef)
+      .then((dataDb)=> {
+        const productDb = { id: dataDb.id, ...dataDb.data() }
+
+        setProduct(productDb)
+      })
+    }
+
     useEffect ( ()=> {
-        getProducts()
-        .then( (data)=> {
-            const findProduct = data.find( 
-              (product)=> product.id === idProduct);
-            setProduct(findProduct)
-        })
-        .catch((error) => {
-          console.error("Error fetching product:", error);
-          setProduct(null); 
-      });
+      getProductById()
     }, [idProduct]);
-    if (!product) {
-      return <p id="loadingproduct">Cargando producto...</p>; // Puedes mostrar un mensaje mientras se carga el producto
-  }
+
 
   return (
     <ItemDetail product={product} />

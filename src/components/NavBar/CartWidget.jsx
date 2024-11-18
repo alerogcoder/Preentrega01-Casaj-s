@@ -1,11 +1,19 @@
 import "./carrocompra.css"
 import carrito from "../../assets/carrito.png"
+import { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
+import { PiShoppingCartBold } from "react-icons/pi"
+
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext)
+    const quantity = totalQuantity()
+
     return (
-    <div className="carrocompra">
-    <img src={carrito} />
-    <p>1</p>
-    </div>
+    <Link to="/cart" className="carrocompra" >
+    <PiShoppingCartBold className={ quantity === 0 ? "emptycart" : "iconcart" }/>
+    <p>{ quantity >= 1 && quantity }</p>
+    </Link>
 )
 }
 

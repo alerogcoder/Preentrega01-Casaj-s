@@ -1,0 +1,20 @@
+.botonitemcount {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    gap: 5px;
+    background: rgba(11, 11, 11, .7);
+    width: fit-content;
+    font-size: 10px;
+}
+.botonitemcount button {
+    border: 0px;
+    padding: 0px 5px;
+    min-width: 50px;
+    text-transform: uppercase;
+    font-family: 'Noto Sans Mono';
+    font-size: 10px;
+    background: transparent;
+    color: gold;
+    cursor: pointer;
+}

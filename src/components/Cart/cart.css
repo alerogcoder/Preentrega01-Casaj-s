@@ -1,0 +1,47 @@
+.cartempty {
+    margin: auto;
+    text-align: center;
+    background: rgba(11, 11, 11, .7);
+    width: 50%;
+    padding: 30px;
+}
+.cartempty h2 {
+    color: #ccc;
+}
+.cartempty a {
+    text-transform: uppercase;
+    color: gold;
+    font-size: 10px;
+    font-family: 'Noto Sans Mono';
+}
+.productocarrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    background: rgba(11,11,11,.7);
+    padding: 10px 15px;
+}
+.productocarrito img {
+    width: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+.tablacarrito {
+    background: rgba(11,11,11,.7);
+    padding: 20px;
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-bottom: 1px solid grey;
+}
+.tablacarrito span {
+    width: 200px;
+    text-align: center;
+    font-family: 'Noto Sans Mono';
+}

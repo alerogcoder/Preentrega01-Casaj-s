@@ -88,3 +88,13 @@ button.addButton {
     margin-top: 10px;
     cursor: pointer;
 }
+a.botonagregar {
+    text-transform: uppercase;
+    font-size: 10px;
+    background: rgba(250, 250, 250, .2);
+    padding: 5px;
+    margin: 10px 0px;
+    display: block;
+    width: fit-content;
+    color: #bbb;
+}

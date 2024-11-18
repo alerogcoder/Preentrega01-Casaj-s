@@ -41,3 +41,6 @@
     color: gold;
     margin-right: 5px;
 }
+.navbar a {
+    color: #bbb;
+}

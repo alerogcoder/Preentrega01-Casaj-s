@@ -1,10 +1,22 @@
-import { useState } from "react";
-import ContadorEventListener from "../Contadores/ContadorEventListener";
+import { useState, useContext } from "react";
+import ItemCount from "../Contadores/ItemCount";
+import { CartContext } from "../../context/CartContext" 
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
+  const [showItemCount, setShowItemCount] = useState(true)
+
+  const { addProductInCart } = useContext(CartContext)
+
+  const addProduct = (count) => {
+    const productCart = { ...product, quantity: count }
+    
+    addProductInCart(productCart)
+    setShowItemCount(false)
+  }
+
   const [currentImage, setCurrentImage] = useState(product.image[0]);
   const images = product.image.filter((image) => image !== currentImage);
-
   return (
     <div className="itemCard">
       <div className="secondary-image">
@@ -17,13 +29,21 @@ const ItemDetail = ({ product }) => {
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <p className="itemPrice">
-          <strong>Precio:</strong> {product.price}€
+          <strong>Precio:</strong> ${product.price}
         </p>
         <p className="itemCant">
           <strong>Cantidad en el pack:</strong> {product.quantity}
         </p>
-        <ContadorEventListener stock={product.stock} />
-      <button className="addButton">Agregar</button>
+        {
+          showItemCount === true ? (
+            <ItemCount stock={product.stock} addProduct={addProduct}/>
+          ) : (
+            <>
+            <ItemCount stock={product.stock} addProduct={addProduct}/>
+            <Link className="botonagregar" to="/cart">Terminar mi compra</Link>
+            </>
+          )
+        }
       </div>
     </div>
   );

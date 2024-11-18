@@ -33,13 +33,13 @@ const Cart = () => {
                 <p>{productCart.name}</p>
                 <p>{productCart.quantity}</p>
                 <p>{productCart.price}€</p>
-                <p>{productCart.quantity * productCart.price}€</p>
+                <p>{(productCart.quantity * productCart.price).toFixed(2)}€</p>
                 <p><button onClick={ () => deleteProductById (productCart.id) }>borrar producto</button></p>
             </div>
         ))
         }
         <div className="finalcarrito">
-        <p className="preciocarrito">Precio total: {totalPrice()}€</p>
+        <p className="preciocarrito">Precio total: {totalPrice().toFixed(2)}€</p>
         <button onClick={deleteCart}>Vaciar carrito</button>
         <Link to="/checkout">Continuar al pago</Link>
         </div>

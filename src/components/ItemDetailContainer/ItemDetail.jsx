@@ -3,6 +3,7 @@ import ItemCount from "../Contadores/ItemCount"
 import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom"
 import ItemDetailLoading from "./ItemDetailLoading"
+import { toast } from "react-toastify"
 
 const ItemDetail = ({ product }) => {
   if (!product) {
@@ -18,6 +19,7 @@ const ItemDetail = ({ product }) => {
 
     addProductInCart(productCart)
     setShowItemCount(false)
+    toast.success("Añadido en el carrito")
   };
 
   const [currentImage, setCurrentImage] = useState(product.image[0])

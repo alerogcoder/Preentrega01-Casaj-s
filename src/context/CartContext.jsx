@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 const CartContext = createContext()
 
@@ -34,6 +35,7 @@ const CartProvider = ({ children }) => {
     const deleteProductById = (idProduct) => {
         const filterProducts = cart.filter ( (productCart) => productCart.id !== idProduct )
         setCart(filterProducts)
+        toast.warning("Producto eliminado")
     }
 
     const deleteCart = () => {

@@ -35,7 +35,7 @@ const ItemDetail = ({ product }) => {
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <p className="itemPrice">
-          <strong>Precio:</strong> ${product.price}
+          <strong>Precio:</strong> {product.price}€
         </p>
         <p className="itemCant">
           <strong>Piezas:</strong> {product.cantidad}
